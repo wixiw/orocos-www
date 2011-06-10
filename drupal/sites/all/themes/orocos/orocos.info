@@ -1,0 +1,8 @@
+; $Id: orocos.info,v 0.1 2011/03/25 sbellens Exp $
+name = Orocos 
+description = Custom theme for www.orocos.org
+version = VERSION
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = style.css
+stylesheets[print][] = print.css
