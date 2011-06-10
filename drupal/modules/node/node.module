@@ -15,16 +15,13 @@
  */
 define('NODE_NEW_LIMIT', time() - 30 * 24 * 60 * 60);
 
-<<<<<<< HEAD
 define('CLICK_BELOW_FOR_REST', ' Click below to read the rest of this post.');
-=======
 define('NODE_BUILD_NORMAL', 0);
 define('NODE_BUILD_PREVIEW', 1);
 define('NODE_BUILD_SEARCH_INDEX', 2);
 define('NODE_BUILD_SEARCH_RESULT', 3);
 define('NODE_BUILD_RSS', 4);
 define('NODE_BUILD_PRINT', 5);
->>>>>>> origin/master6
 
 /**
  * Implementation of hook_help().
@@ -373,16 +370,9 @@ function node_teaser($body, $format = NULL, $size = NULL) {
   // Edit by PS: do not take into account line breaks
   // Newline only indicates a line break if line break converter
   // filter is present.
-<<<<<<< HEAD
-  //if (isset($filters['filter/2'])) {
-  //  $line_breaks["\n"] = 1;
-  //}
-
-=======
   if (isset($filters['filter/1'])) {
     $line_breaks["\n"] = 1;
   }
->>>>>>> origin/master6
   $break_points[] = $line_breaks;
 
   // If the first paragraph is too long, split at the end of a sentence.
