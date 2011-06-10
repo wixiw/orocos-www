@@ -18,7 +18,7 @@ ErrorDocument 404 /index.php
 
 # Force simple error message for requests for non-existent favicon.ico.
 <Files favicon.ico>
-  ErrorDocument 404 "The requested file favicon.ico was not found.
+  ErrorDocument 404 "The requested file favicon.ico was not found."
 </Files>
 
 # Set the default handler.
@@ -70,6 +70,19 @@ DirectoryIndex index.php
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
+
+# Redirect documentation to other server
+# Do not rewrite documents in /doc/ subdirs, as they are drupal
+# nodes !
+    RewriteCond %{REQUEST_URI} !.+/doc/.+
+    RewriteCond %{REQUEST_URI} !.+/v2.x/.+
+    RewriteCond %{REQUEST_URI} !.+/v2.2.x/.+
+    RewriteCond %{REQUEST_URI} !.+/v1.12.x/.+
+#RewriteRule   ^(stable/.+/doc/.+)  http://www.orocos.org/$1 [R,L]
+# Only match physical .html pages here:
+RewriteRule   ^(stable.+)    http://people.mech.kuleuven.be/~orocos/pub/$1 [R,L]
+RewriteRule   ^(devel.+)     http://people.mech.kuleuven.be/~orocos/pub/$1 [R,L]
+RewriteRule   ^(dfki.+)      http://www.rock-robotics.org/ [R,L]
 
   # If your site can be accessed both with and without the 'www.' prefix, you
   # can use one of the following settings to redirect users to your preferred

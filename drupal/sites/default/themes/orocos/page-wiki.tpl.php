@@ -15,19 +15,10 @@
   <tr>
     <td id="logo">
       <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><img src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
-      <?php if (preg_match("/rtt/i", drupal_get_path_alias($_GET['q'])) ) { ?>
-          <h1 class='site-name'><a href="<?php print $base_path ?><?php print "rtt" ?>" title="<?php print t('RTT Home') ?>">Orocos Real-Time Toolkit</a></h1>
-          <div class='site-slogan'><?php print "Smarter realtime. Safer threads" ?></div> 
-      <?php } else if (preg_match("/kdl/i", drupal_get_path_alias($_GET['q'])) ) { ?>
-          <h1 class='site-name'><a href="<?php print $base_path ?><?php print "kdl" ?>" title="<?php print t('KDL Home') ?>">Orocos Kinematics and Dynamics</a></h1>
-          <div class='site-slogan'><?php print "Smarter in motion!" ?></div> 
-      <?php } else if (preg_match("/bfl/i", drupal_get_path_alias($_GET['q'])) ) { ?>
-          <h1 class='site-name'><a href="<?php print $base_path ?><?php print "bfl" ?>" title="<?php print t('BFL Home') ?>">Orocos Bayesian Filtering Library</a></h1>
-          <div class='site-slogan'><?php print "Think smarter. Guess better!" ?></div> 
-      <?php } else { ?>
-          <?php if ($site_name) { ?><h1 class='site-name'><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
-      <?php if ($site_slogan) { ?><div class='site-slogan'><?php print $site_slogan ?></div><?php } ?>
-    <?php } ?>
+      <?php if (preg_match("/wiki/i", drupal_get_path_alias($_GET['q'])) ) { ?>
+          <h1 class='site-name'><a href="<?php print $base_path ?>" title="<?php print t('Orocos Home') ?>">Orocos Wiki</a></h1>
+          <div class='site-slogan'><?php print "Community pages" ?></div> 
+      <?php }?>
     <?php print $breadcrumb ?>
     </td>
     <td id="menu">
